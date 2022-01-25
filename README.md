@@ -18,7 +18,7 @@
 
 (2) 选择SpringBoot版本和依赖
 
-![IDEA-New-Project2.png](https://i.loli.net/2021/09/23/plX2WhnRorje3Nm.png)
+![IDEA-New-Project2.png](https://s2.loli.net/2022/01/25/gqzrY3AtBWMIHvl.png)
 
 注意：这些依赖默认会添加到项目依赖中，即使你不勾选：spring-web, spring-data-redis, jedis, quartz, validation, mysql, mybatis, mybatis-generator-core, em-common-service, tk-mybatis-mapper, apache-commons-pool, apache-commons-lang3, commons-collections, lombok, kafka.
 

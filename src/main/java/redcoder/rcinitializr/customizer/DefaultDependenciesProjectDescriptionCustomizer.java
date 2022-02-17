@@ -38,7 +38,6 @@ public class DefaultDependenciesProjectDescriptionCustomizer implements ProjectD
         requiredDependenciesId.add("apache-commons-lang3");
         requiredDependenciesId.add("commons-collections");
         requiredDependenciesId.add("lombok");
-        requiredDependenciesId.add("kafka");
         requiredDependenciesId.add("guava");
         requiredDependenciesId.add("h2database");
     }

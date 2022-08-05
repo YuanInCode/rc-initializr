@@ -27,5 +27,3 @@
 ![IDEA-New-Project3.png](https://i.loli.net/2021/09/23/cJz6W5C3xhebkvi.png)
 
 至此，项目创建完成，包含了我们常用的配置代码、工具类和一些依赖等。
-
-注意：生成的项目没有mvn wrapper相关的文件，一般情况下我们本地都安装了maven，而且IDEA本身也提供了maven，我们很少需要使用它，因此rc-initializr没有生成这些文件。另外Help.md也没有生成，该文件也很少使用...

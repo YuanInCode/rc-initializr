@@ -47,7 +47,6 @@
             <appender-ref ref="webLoggerFileOut"/>
         </root>
     </springProfile>
-    ddd
     <springProfile name="PROD">
         <root level="INFO">
             <appender-ref ref="webLoggerFileOut"/>

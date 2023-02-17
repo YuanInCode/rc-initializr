@@ -1,4 +1,4 @@
-package ${package}.model.dto;
+package ${package}.dto;
 
 import ${package}.constant.ApiStatus;
 import static ${package}.constant.ApiStatus.OK;

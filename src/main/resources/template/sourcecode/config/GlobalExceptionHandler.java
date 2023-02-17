@@ -1,6 +1,6 @@
 package ${package}.config;
 
-import ${package}.model.dto.ApiResult;
+import ${package}.dto.ApiResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
@@ -60,8 +60,6 @@ public class GlobalExceptionHandler {
             log.error("", e);
             return ApiResult.failure(SERVER_ERROR.getStatus(), SERVER_ERROR.getMessage());
         }
-
     }
-
 
 }

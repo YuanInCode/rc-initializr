@@ -37,7 +37,7 @@
     </appender>
 
     <springProfile name="DEV">
-        <logger name="com.eastmoney.market" level="DEBUG"/>
+        <logger name="redcoder.rcinitializr" level="DEBUG"/>
         <root level="INFO">
             <appender-ref ref="stdout"/>
         </root>

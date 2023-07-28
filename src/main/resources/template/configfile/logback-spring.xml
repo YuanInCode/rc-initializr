@@ -4,7 +4,7 @@
     <!-- TODO: 设置app.name -->
     <property name="app.name" value="todo"/>
     <!-- TODO: 设置日志文件路径 -->
-    <property name="log.path" value="/home/baoleiji/logs"/>
+    <property name="log.path" value="/user/logs"/>
     <contextName>${app.name}</contextName>
     <springProperty scope="context" name="env" source="em-logger.env" defaultValue="test"/>
 

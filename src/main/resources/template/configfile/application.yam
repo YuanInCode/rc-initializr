@@ -12,8 +12,3 @@ spring:
     name: ${appName}
   banner:
     location: classpath:rc-banner.txt
-
-mybatis:
-  configuration:
-    map-underscore-to-camel-case: true
-  mapper-locations: classpath*:mybatis/mapper/*.xml

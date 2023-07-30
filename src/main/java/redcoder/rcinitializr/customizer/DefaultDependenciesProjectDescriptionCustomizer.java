@@ -30,10 +30,7 @@ public class DefaultDependenciesProjectDescriptionCustomizer implements ProjectD
         requiredDependenciesId.add("jedis");
         requiredDependenciesId.add("quartz");
         requiredDependenciesId.add("validation");
-        requiredDependenciesId.add("mysql");
-        requiredDependenciesId.add("mybatis");
-        requiredDependenciesId.add("mybatis-generator-core");
-        requiredDependenciesId.add("tk-mybatis-mapper");
+        requiredDependenciesId.add("data-jpa");
         requiredDependenciesId.add("apache-commons-pool");
         requiredDependenciesId.add("apache-commons-lang3");
         requiredDependenciesId.add("commons-collections");

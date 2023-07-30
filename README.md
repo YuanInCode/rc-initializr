@@ -10,7 +10,7 @@
 
 (1)  打开Intellij IDEA，进入New Project界面
 
-![创建项目.png](https://s2.loli.net/2023/02/17/MIJOx8D74CicuGP.png)
+![step1.png](https://s2.loli.net/2023/02/17/MIJOx8D74CicuGP.png)
 
 修改Service Url为：http://localhost:8080 (本地启动的服务地址，根据实际情况填写)
 
@@ -18,12 +18,12 @@
 
 (2) 选择SpringBoot版本和依赖
 
-![选择SpringBoot版本和依赖.png](https://s2.loli.net/2022/01/25/gqzrY3AtBWMIHvl.png)
+![step2.png](https://s2.loli.net/2023/07/30/EOBqJR3scH8do6y.png)
 
-注意：这些依赖默认会添加到项目依赖中，即使你不勾选：spring-web, spring-data-redis, jedis, quartz, validation, mysql, mybatis, mybatis-generator-core, em-common-service, tk-mybatis-mapper, apache-commons-pool, apache-commons-lang3, commons-collections, lombok, kafka.
+默认添加的依赖：spring-web, spring-data-redis, jedis, quartz, validation, apache-commons-pool, apache-commons-lang3, commons-collections, lombok, spring-data-jpa.
 
 (3) 点击Finish，项目创建成功，目录结构如下
 
-![项目结构.png](https://s2.loli.net/2023/02/17/oZO6gyGMsQ2a7tN.png)
+![step3.png](https://s2.loli.net/2023/07/30/aPyWQUC6wlOYrGN.png)
 
 至此，项目创建完成，包含了我们常用的配置代码、工具类和一些依赖等。

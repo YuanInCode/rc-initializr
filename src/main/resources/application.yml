@@ -1446,16 +1446,6 @@ custom:
             links:
               - rel: reference
                 href: https://commons.apache.org/proper/commons-collections/index.html
-          - name: MyBatis 通用 Mapper4
-            id: tk-mybatis-mapper
-            groupId: tk.mybatis
-            artifactId: mapper
-            version: 4.1.5
-            starter: false
-            description: 通用Mapper都可以极大的方便开发人员。可以随意的按照自己的需要选择通用方法，还可以很方便的开发自己的通用方法。
-            links:
-              - rel: reference
-                href: https://github.com/abel533/Mapper
           - name: redis client jedis
             id: jedis
             groupId: redis.clients

@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HealthCheckController {
 
-    @GetMapping("/info/desc")
-    @SuppressWarnings("rawtypes")
-    public ApiResult healthCheck() {
-        return ApiResult.success();
+    @GetMapping("/health")
+    public ApiResult<String> healthCheck() {
+        return ApiResult.success("ok");
     }
 }

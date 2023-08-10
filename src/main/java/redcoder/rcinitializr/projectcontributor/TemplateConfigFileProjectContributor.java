@@ -110,8 +110,7 @@ class TemplateConfigFileProjectContributor implements ProjectContributor {
      */
     private InputStream processingSpringConfigFile(InputStream inputStream) throws IOException {
         StringJoiner fileContent = new StringJoiner("\n");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-        for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));for (String line = reader.readLine(); line != null; line = reader.readLine()) {
             if (line.contains(appName)) {
                 line = line.replace(appName, description.getApplicationName());
             } else if (line.contains(controllerPackage)) {

@@ -1,4 +1,4 @@
-package redcoder.rcinitializr.config;
+package redcoder.rcinitializr.configuration;
 
 import io.spring.initializr.metadata.InitializrMetadata;
 import io.spring.initializr.metadata.InitializrMetadataBuilder;

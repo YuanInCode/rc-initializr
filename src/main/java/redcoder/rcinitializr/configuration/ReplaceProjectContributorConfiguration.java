@@ -1,4 +1,4 @@
-package redcoder.rcinitializr.support;
+package redcoder.rcinitializr.configuration;
 
 import io.spring.initializr.generator.project.ProjectGenerationConfiguration;
 import io.spring.initializr.generator.project.contributor.ProjectContributor;
@@ -29,7 +29,6 @@ public class ReplaceProjectContributorConfiguration {
     /**
      * 将一些ProjectContributor实例替换为NoOpContributor实例：
      * <ul>
-     *     <li>替换MavenWrapperContributor，避免生成maven wrapper文件</li>
      *     <li>替换WebFoldersContributor，避免生成src/main/resources/templates和src/main/resources/static目录</li>
      *     <li>替换HelpDocumentProjectContributor，避免生成HELP.md文件</li>
      * </ul>
@@ -40,8 +39,7 @@ public class ReplaceProjectContributorConfiguration {
         private final ProjectContributor noOp;
 
         public ReplaceProjectContributorBeanPostProcessor() {
-            replaceList = Collections.unmodifiableList(Arrays.asList("mavenWrapperContributor",
-                    "webFoldersContributor", "helpDocumentProjectContributor"));
+            replaceList = Collections.unmodifiableList(Arrays.asList("webFoldersContributor", "helpDocumentProjectContributor"));
             noOp = new NoOpProjectContributor();
         }
 

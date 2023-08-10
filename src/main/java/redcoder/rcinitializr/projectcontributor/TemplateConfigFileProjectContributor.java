@@ -17,7 +17,6 @@ import java.nio.file.Path;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-import static redcoder.rcinitializr.projectcontributor.TemplateConfigFileProjectContributor.MybatisConfigFilePlaceHolder.packageName;
 import static redcoder.rcinitializr.projectcontributor.TemplateConfigFileProjectContributor.SpringConfigFilePlaceHolder.*;
 
 /**
@@ -27,15 +26,14 @@ import static redcoder.rcinitializr.projectcontributor.TemplateConfigFileProject
  *     <li>application-DEV.yaml (copy from application-DEV.yam)</li>
  *     <li>application-ZPTEST.yaml (copy from application-ZPTEST.yam)</li>
  *     <li>application-PROD.yaml (copy from application-PROD.yam)</li>
- *     <li>mybatis/generatorConfig.xml</li>
  *     <li>logback-spring.xml</li>
  * </ul>
  * <p>
- *     2. 替换配置文件中的占位符：${controllerPackage}, ${artifactId}, ${version}, ${quartzSchedulerName}
+ *     2.替换配置文件中的占位符：${controllerPackage}, ${artifactId}, ${version}, ${quartzSchedulerName}
  * </p>
  *
  * <p>
- *     3. 同时，删除已有的application.properties文件；
+ *     3.删除已有的application.properties文件；
  * </p>
  *
  * @author redcoder54
@@ -90,8 +88,8 @@ class TemplateConfigFileProjectContributor implements ProjectContributor {
     private String extractFileName(URI root, URI resource) {
         String candidate = resource.toString().substring(root.toString().length());
         String filename = StringUtils.trimLeadingCharacter(candidate, '/');
-        if (filename.endsWith("yam")) {
-            filename = filename + "l";
+        if (filename.endsWith("tpl")) {
+            filename = filename.substring(0, filename.indexOf(".")) + ".yml";
         }
         return filename;
     }
@@ -100,10 +98,8 @@ class TemplateConfigFileProjectContributor implements ProjectContributor {
      * 替换配置文件中的占位符
      */
     private InputStream processingConfigFile(InputStream inputStream, String filename) throws IOException {
-        if (filename.endsWith("yaml")) {
+        if (filename.endsWith("yml")) {
             return processingSpringConfigFile(inputStream);
-        } else if (filename.endsWith("generatorConfig.xml")) {
-            return processingMBGConfigFile(inputStream);
         } else {
             return inputStream;
         }
@@ -126,21 +122,6 @@ class TemplateConfigFileProjectContributor implements ProjectContributor {
                 line = line.replace(artifactId, description.getArtifactId());
             } else if (line.contains(quartzSchedulerName)) {
                 line = line.replace(quartzSchedulerName, toCamelCase(description.getArtifactId()) + "Scheduler");
-            }
-            fileContent.add(line);
-        }
-        return new ByteArrayInputStream(fileContent.toString().getBytes(StandardCharsets.UTF_8));
-    }
-
-    /**
-     * 替换MBG配置文件中的占位符
-     */
-    private InputStream processingMBGConfigFile(InputStream inputStream) throws IOException {
-        StringJoiner fileContent = new StringJoiner("\n");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-        for (String line = reader.readLine(); line != null; line = reader.readLine()) {
-            if (line.contains(packageName)) {
-                line = line.replace(packageName, description.getPackageName());
             }
             fileContent.add(line);
         }

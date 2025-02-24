@@ -1,3 +1,2 @@
 io.spring.initializr.generator.project.ProjectGenerationConfiguration=\
-  redcoder.rcinitializr.projectcontributor.RcProjectContributorConfiguration,\
-  redcoder.rcinitializr.configuration.ReplaceProjectContributorConfiguration
+  redcoder.rcinitializr.generator.project.RcInitializrProjectGenerationConfiguration

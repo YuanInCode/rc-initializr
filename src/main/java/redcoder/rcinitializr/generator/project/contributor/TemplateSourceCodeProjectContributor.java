@@ -1,4 +1,4 @@
-package redcoder.rcinitializr.projectcontributor;
+package redcoder.rcinitializr.generator.project.contributor;
 
 import io.spring.initializr.generator.project.ProjectDescription;
 import io.spring.initializr.generator.project.contributor.ProjectContributor;
@@ -14,11 +14,8 @@ import java.nio.file.Path;
 /**
  * 将resources/template/sourcecde目录下的文件添加项目的根包{@link ProjectDescription#getPackageName()}下，
  * java文件中的 ${package} 会被替换成实际的包路径。
- *
- * @author redcoder54
- * @since 2021-08-13
  */
-class TemplateSourceCodeProjectContributor implements ProjectContributor {
+public class TemplateSourceCodeProjectContributor implements ProjectContributor {
 
     private static final String rootResource = "classpath:template/sourcecode";
     private static final String sourceCodeDirPrefix = "src" + File.separatorChar + "main" + File.separatorChar + "java";

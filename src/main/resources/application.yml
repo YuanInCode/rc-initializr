@@ -1399,14 +1399,14 @@ initializr:
       name: 2.3.2.RELEASE
       default: false
   group-id:
-    value: redcoder54
+    value: yuanincode
   artifact-id:
     value: my-app
   version:
     value: 1.0.0
 
 # 自定义配置，对spring initializr的补充
-custom:
+rc:
   initializr:
     env:
       repositories:

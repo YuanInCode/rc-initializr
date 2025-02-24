@@ -36,7 +36,7 @@
     </appender>
 
     <springProfile name="default">
-        <logger name="redcoder54.myapp" level="DEBUG"/>
+        <logger name="yuanincode.myapp" level="DEBUG"/>
         <root level="INFO">
             <appender-ref ref="stdout"/>
         </root>

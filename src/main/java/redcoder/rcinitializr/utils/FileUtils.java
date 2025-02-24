@@ -6,9 +6,6 @@ import java.io.File;
 
 /**
  * 支持文件查找、删除功能的工具类
- *
- * @author redcoder54
- * @since 2021-08-20
  */
 public abstract class FileUtils {
 

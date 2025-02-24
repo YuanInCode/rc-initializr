@@ -8,10 +8,6 @@ import io.spring.initializr.web.project.WebProjectRequest;
 
 import java.util.Map;
 
-/**
- * @author redcoder54
- * @since 2021-08-13
- */
 // @RestController
 public class RcMarketProjectGenerationController extends ProjectGenerationController<ProjectRequest> {
 

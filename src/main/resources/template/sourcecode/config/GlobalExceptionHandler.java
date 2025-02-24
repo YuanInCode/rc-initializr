@@ -20,17 +20,16 @@ import static ${package}.constant.ApiStatus.*;
  */
 @RestControllerAdvice
 @Slf4j
-@SuppressWarnings("rawtypes")
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ConstraintViolationException.class)
-    public ApiResult handleConstraintViolationException(ConstraintViolationException e) {
-        log.error("参数校验失败，" + e.getMessage(), e);
+    public ApiResult<String> handleConstraintViolationException(ConstraintViolationException e) {
+        log.error("参数校验失败，{}", e.getMessage(), e);
         return ApiResult.failure(PARAM_ERROR.getStatus(), "参数校验失败，" + e.getMessage());
     }
 
     @ExceptionHandler({BindException.class, MethodArgumentNotValidException.class})
-    public ApiResult handleBindException(Exception e) {
+    public ApiResult<String> handleBindException(Exception e) {
         BindingResult bindingResult;
         if (e instanceof BindException) {
             bindingResult = ((BindException) e).getBindingResult();
@@ -49,15 +48,15 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Throwable.class)
-    public ApiResult handleThrowable(Throwable e) {
+    public ApiResult<String> handleThrowable(Throwable e) {
         if (e instanceof IllegalArgumentException) {
-            log.error("", e);
+            log.error("param error", e);
             return ApiResult.failure(PARAM_ERROR.getStatus(), e.getMessage());
         } else if (e instanceof ServletException) {
-            log.error("", e);
+            log.error("bad request", e);
             return ApiResult.failure(BAD_REQUEST.getStatus(), e.getMessage());
         } else {
-            log.error("", e);
+            log.error("server error", e);
             return ApiResult.failure(SERVER_ERROR.getStatus(), SERVER_ERROR.getMessage());
         }
     }

@@ -1,4 +1,4 @@
-package redcoder.rcinitializr.projectcontributor;
+package redcoder.rcinitializr.generator.project.contributor;
 
 import io.spring.initializr.generator.project.ProjectDescription;
 import io.spring.initializr.generator.project.contributor.ProjectContributor;
@@ -17,7 +17,7 @@ import java.nio.file.Path;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-import static redcoder.rcinitializr.projectcontributor.TemplateConfigFileProjectContributor.SpringConfigFilePlaceHolder.*;
+import static redcoder.rcinitializr.generator.project.contributor.TemplateConfigFileProjectContributor.SpringConfigFilePlaceHolder.*;
 
 /**
  * 1. 添加以下配置文件至项目的resources目录下：
@@ -35,11 +35,8 @@ import static redcoder.rcinitializr.projectcontributor.TemplateConfigFileProject
  * <p>
  *     3.删除已有的application.properties文件；
  * </p>
- *
- * @author redcoder54
- * @since 2021-08-13
  */
-class TemplateConfigFileProjectContributor implements ProjectContributor {
+public class TemplateConfigFileProjectContributor implements ProjectContributor {
 
     private static final Logger log = LoggerFactory.getLogger(TemplateConfigFileProjectContributor.class);
 

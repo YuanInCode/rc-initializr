@@ -1,4 +1,4 @@
-package redcoder.rcinitializr.customizer;
+package redcoder.rcinitializr.generator.project.customizer;
 
 import io.spring.initializr.generator.buildsystem.Dependency;
 import io.spring.initializr.generator.project.MutableProjectDescription;
@@ -13,9 +13,6 @@ import java.util.Set;
 
 /**
  * 添加一些默认的依赖
- *
- * @author redcoder54
- * @since 2021-08-14
  */
 public class DefaultDependenciesProjectDescriptionCustomizer implements ProjectDescriptionCustomizer {
     private final Set<String> requiredDependenciesId;
